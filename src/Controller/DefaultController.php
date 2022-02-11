@@ -3,7 +3,9 @@
     use Symfony\Component\HttpFoundation\Response;
 
     use Symfony\Component\Routing\Annotation\Route;
-    class DefaultController
+
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    class DefaultController extends AbstractController
     {
      /**
      * @Route("/")
@@ -17,9 +19,11 @@
       */
         public function show($slug)
         {
-            return new Response(sprintf(
-                'My first page "%s"!',
-                $slug
-            ));
+
+            return $this->render('question/show.html.twig', [
+                'question' => ucwords(str_replace('-', ' ', $slug))
+            ]);
+            
+
         }
     }
