@@ -19,15 +19,13 @@
       */
         public function show($slug)
         {
-            $answers = [
-                'Make sure your cat is sitting purrrfectly still ?',
-                'Honestly, I like furry shoes better than MY cat',
-                'Maybe... try saying the spell backwards?',
-            ];
+            $answers = ['Hello world','ça va?','troisieme ligne'];
+
+            dump($slug,$this);
 
             return $this->render('question/show.html.twig', [
                 'question' => ucwords(str_replace('-', ' ', $slug)),
-                'answers' => $answers,
+                'answers' => $answers
             ]);
             
 
