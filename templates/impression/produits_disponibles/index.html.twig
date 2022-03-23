@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProduitsDisponiblesController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1 style="color:black">LISTES DES PRODUITS DISPONIBLES✅</h1>
+    <table border=1 onload="window.print">
+        <tr>
+        <th style="color:teal">NomProduits</th><th style="color:teal">TotaleDisponibles</th>
+        </tr>
+
+        {% for cle in prod %}
+            <tr>
+               <td>{{ cle.NomProduits }}</td>
+               <td>{{ cle.StockageProduit }}</td>
+            </tr>
+        {% endfor %}
+    
+    </table>
+    <h1>Antananarivo le, 16 Mars 2022</h1>
+    <button><a href="{{ path('download_dispo')}}" class=btn>IMPRIMER</a></button>
+</div>
+{% endblock %}

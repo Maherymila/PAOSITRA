@@ -1,117 +1,92 @@
+
 {% extends "base.html.twig" %}
-  
+
+{% block title %}Question: {{ question }}{% endblock %}
 
 {% block body %}
+<div class="jumbotron-img jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-6">Centre d'Approvsionnement des Valeurs Postales</h1>
+        <p class="lead">Centre d'Approvisionement des Valeurs Postales
+est la fusion du Centre d’approvisionnement en Timbres-Poste et le Service Philatélique auparavant. Il est rattaché directement à la Direction des Opérations Postales. Le CAVP est composé de : section commande, section expédition et secrétariat.
 
-    <style>
-        body {
-            background: #1690A7;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
+Le CAVP assure l’approvisionnement des bureaux en valeurs postales tel que Timbre-poste et Produits Nouveaux Postaux (autres produits et produits philatéliques qu’il confectionne par ses soins. Il effectue la vente par correspondance à l’Etranger, et gère les comptes de réserve des philatélistes. Le CAVP élabore le catalogue des produits philatéliques dont il dispose au caveau.</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row mb-3">
+        <div class="col">
+            <button class="btn btn-question">Articles</button>
+        </div>
+    </div>
+    <div class="row">
+        <img src="/image/acceuil.jpg" width="500" height="500">
+    </div>
 
-        * {
-            font-family: sans-serif;
-            box-sizing: border-box;
-        }
+            <div class="d-flex justify-content-between my-4">
+                <h2 class="">CAVP<span style="font-size:1.2rem;"</span></h2>
+                <button class="btn btn-sm btn-secondary">Submit</button>
+            </div>
 
-        h1 {
-            text-align: center;
-        }
-
-        form {
-            width: 500px;
-            border: 2px solid #ccc;
-            padding: 30px;
-            background: #fff;
-            border-radius: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        h2 {
-            color: goldenrod;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 25px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        input {
-            display: block;
-            border: 2px solid #ccc;
-            width: 95%;
-            padding: 10px;
-            margin: 10px auto;
-            border-radius: 5px;
-        }
-
-        label {
-            color: #888;
-            font-size: 18px;
-            padding: 10px;
-        }
-
-        button {
-            float: right;
-            background: #555;
-            padding: 10px 15px;
-            color: #fff;
-            border-radius: 5px;
-            margin-right: 10px;
-            border: none;
-        }
-
-        button:hover {
-            opacity: .7;
-        }
-
-        .error {
-            background: #F2DEDE;
-            color: #A94442;
-            padding: 10px;
-            width: 95%;
-            border-radius: 5px;
-            margin: 20px auto;
-        }
-
-        h1 {
-            text-align: center;
-            color: #fff;
-        }
-
-        a {
-            float: right;
-            background: #555;
-            padding: 10px 15px;
-            color: #fff;
-            border-radius: 5px;
-            margin-right: 10px;
-            border: none;
-            text-decoration: none;
-        }
-
-        a:hover {
-            opacity: .7;
-        }
-            </style>
-    
-    <form action="acceuil.php" method="post">
-        <h2>AUTHENTIFICATION</h2>
-        <?php if (isset($_GET['error'])) { ?>
-            <p class="error"><?php echo $_GET['error'] ?></p>
-        <?php } ?>
+    <ul class="list-unstyled">
         
-        <label for="">Username</label>
-        <input type="text" name="username" placeholder="Enter your Username"><br>
+            <li class="mb-4">
+                <div class="d-flex justify-content-center">
+                    <div class="mr-2 pt-2">
+                        <img src="/image/3.jpg" width="50" height="50">
+                    </div>
+                    <div class="mr-3 pt-2">
+                        
+                        <p>-- Section Commande</p>
+                    </div>
+                    <div class="vote-arrows flex-fill pt-2 js-vote-arrows" style="min-width: 90px;">
+                        <a class="vote-up" href="#"data-direction="up"><i class="far fa-arrow-alt-circle-up"></i></a>
+                        <a class="vote-down" href="#"data-direction="down"><i class="far fa-arrow-alt-circle-down"></i></a>
+                        <span>+<span class="js-vote-total">6</span></span>
+                    </div>
+                </div>
+            </li>
+        
+            <li class="mb-4">
+                <div class="d-flex justify-content-center">
+                    <div class="mr-2 pt-2">
+                        <img src="/image/4.jpg" width="50" height="50">
+                    </div>
+                    <div class="mr-3 pt-2">
+                        
+                        <p>-- Section Expédition</p>
+                    </div>
+                    <div class="vote-arrows flex-fill pt-2 js-vote-arrows" style="min-width: 90px;">
+                        <a class="vote-up" href="#"data-direction="up"><i class="far fa-arrow-alt-circle-up"></i></a>
+                        <a class="vote-down" href="#"data-direction="down"><i class="far fa-arrow-alt-circle-down"></i></a>
+                        <span>+<span class="js-vote-total">6</span></span>
+                    </div>
+                </div>
+            </li>
 
-        <label for="">Password</label>
-        <input type="password" name="password" placeholder="Enter your Password"><br>
+            <li class="mb-4">
+                <div class="d-flex justify-content-center">
+                    <div class="mr-2 pt-2">
+                        <img src="/image/5.jpg" width="50" height="50">
+                    </div>
+                    <div class="mr-3 pt-2">
+                        
+                        <p>-- Section Sécrétariat</p>
+                    </div>
+                    <div class="vote-arrows flex-fill pt-2 js-vote-arrows" style="min-width: 90px;">
+                        <a class="vote-up" href="#"data-direction="up"><i class="far fa-arrow-alt-circle-up"></i></a>
+                        <a class="vote-down" href="#"data-direction="down"><i class="far fa-arrow-alt-circle-down"></i></a>
+                        <span>+<span class="js-vote-total">6</span></span>
+                    </div>
+                </div>
+            </li>
+    </ul>
+</div>
 
-        <button type="submit">Valider</button>
-    </form>
 {% endblock %}
 
-    
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/question_show.js') }}"></script>
+{% endblock %}

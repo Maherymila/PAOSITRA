@@ -1,0 +1,22 @@
+{% extends 'export.html.twig' %}
+
+{% block body %}
+        
+
+    <h1 style="color:black">LISTES DES PRODUITS ENTRER</h1>
+    <table border=1 onload="window.print">
+        <tr>
+         <th style="color:teal">NomProduits</th><th style="color:teal">TotaleEntrées</th>
+        </tr>
+
+        {% for cle in entrer %}
+            <tr>
+               <td>{{ cle.NomProduits }}</td>
+               <td>{{ cle.Quantiter }}</td>
+            </tr>
+        {% endfor %}
+    
+    </table> 
+    <p>Antananarivo le 17 Mars 2022<p>  
+    <p>Signature de<p> 
+{% endblock %}

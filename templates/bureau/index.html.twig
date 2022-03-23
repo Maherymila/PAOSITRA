@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bureau index{% endblock %}
+
+{% block body %}
+    <h1 style="color:lightgray">Bureau</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Nombureau</th>
+                <th>Annuaire</th>
+                <th>Classe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bureau in bureaus %}
+            <tr>
+                <td>{{ bureau.id }}</td>
+                <td>{{ bureau.code }}</td>
+                <td>{{ bureau.nombureau }}</td>
+                <td>{{ bureau.annuaire }}</td>
+                <td>{{ bureau.classe }}</td>
+                <td>
+                    <a href="{{ path('bureau_show', {'id': bureau.id}) }}">show</a>
+                    <a href="{{ path('bureau_edit', {'id': bureau.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('bureau_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SortieProduitsController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>LISTES DES PRODUITS SORTIES✅</h1>
+
+    <table border=1 onload="window.print">
+        <tr>
+        <th style="color:green">NomProduits</th><th style="color:green">Quantiter</th>
+        </tr>
+        {% for cle in sortie %}
+            <tr>
+               <td>{{ cle.NomProduits }}</td>
+               <td>{{ cle.Quantiter}}</td>
+            </tr>
+        {% endfor %}
+    
+    </table>
+    <h1>Antananarivo le, 16 Mars 2022</h1>
+    <button style="background-color:white"><a style="text-decoration:none, color:white" href="{{ path('download_dispo')}}"><b>IMPRIMER</b></a></button>
+</div>
+{% endblock %}
